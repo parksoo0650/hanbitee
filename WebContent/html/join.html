@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Join</title>
+<link rel="stylesheet" href="../css/hanbit.css" />
+
+</head>
+<body>
+<div id="wrapper" class="width_full_size" style="height:100%;">
+<div id="header" class="width_full_size position_fixed" style="height:100px">
+<div class="logo_box width_full_size" style="height:60%;">
+<img src="../images/index/index_logo.png" class="image_center" />
+<h5 class="text_center">안녕하세요 한빛 병원입니다.</h5>
+</div>
+<div class="width_full_size" style="height:40%">
+	<ul class="gnb">
+		<li><a href="join.html" >회원가입</a></li>
+		<li><a href="login.html">로그인</a></li>
+		<li><a href="board.html">자유게시판</a></li>
+		<li><a href="admiin.html">관리자모드</a></li>
+	</ul>	
+</div>
+</div>
+<div style="height:100px"></div>
+<div id="container" class="width_full_size" style="height:500px;">
+	<form action="" style="width:40%;" class="margin_center">
+		<table>
+			<tr>
+				<td class="color_blue">한글 또는 영문으로 입력해 주세요</td>
+			</tr>
+			<tr>
+				<td><input type="email" name="email" value="E-mail" size="20"><input
+					type="button" value="중복확인">
+				<p>LPOINT아이디는 자주 사용하시는 이메일주소로 입력해주세요</td>
+			</tr>
+			<tr>
+				<td><input type="password" name="password" value="비밀번호"
+					size="20">
+				<p>8~15자의 영문자,숫자,특수문자를 함께 입력해주세요</td>
+			</tr>
+			<tr>
+				<td><input type="password" name="password" value="비밀번호확인"
+					size="20">
+				<p></td>
+			</tr>
+			<tr>
+				<td><select name="birthyear">
+						<option value="생년">생년</option>
+						<option value="1992">1992</option>
+				</select> <select name="birthmonth">
+						<option value="월">월</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+				</select> <select name="birthday">
+						<option value="일">일</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+				</select>
+				<p></td>
+			</tr>
+			<tr>
+				<td><select name="telecom">
+						<option value="SKT">SKT</option>
+						<option value="KT">KT</option>
+						<option value="LGU+">LGU+</option>
+				</select> <select name="firstnum">
+						<option value="010">010</option>
+				</select> -<input type="tel" name="pnum1" size="4"> -<input
+					type="tel" name="pnum2" size="4">
+				<p></td>
+			</tr>
+
+			<tr align="left">
+				<th>정보수신 동의<input type="checkbox" name="allcheck">전제선택
+				</th>
+			</tr>
+			<tr>
+				<td>LPOINT<input type="checkbox" name="mail" value="E-Mail">E-Mail
+					<input type="checkbox" name="sms" value="SMS">SMS
+					<p>
+						롯데시네마<input type="checkbox" name="mail" value="E-Mail">E-Mail
+						<input type="checkbox" name="sms" value="SMS">SMS
+					<p>*정보수신동의를 하시면,고객혜택 및 이벤트 등 다양한 정보를 받으실 수 있습니다.</td>
+			</tr>
+			<tr>
+				<td>개인정보 유효기간 <input type="radio" name="del" value="탈퇴 시 파기">탈퇴
+					시 파기 <input type="radio" name="oneyear" value="1년">1년
+					<p>*개인정보 유효기간 경과 이후 개인정보를 분리 저장관리 또는 파기합니다.
+					<p></td>
+			</tr>
+		</table>
+		<span class="color_blue">*선택항목에 동의하지 않으셔도 정상적인 서비스를 이용하실 수
+			있습니다.</span>
+		<p>
+			<input type="button" name="back" value="이전" size="20"
+				style="color: white; background-color: gray; width: 100px; height: 50px;">
+			<input type="submit" value="다음" size="20"
+				style="color: white; background-color: blue; width: 100px; height: 50px;">
+	</form>
+</div>
+<div id="footer" class="width_full_size" style="height:80px"></div>
+</div>
+</body>
+</html>
