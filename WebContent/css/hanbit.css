@@ -31,8 +31,8 @@ a:active {color: #408080;} /* selected link */
 .border_none {border-style: none;}
 .border_hidden {border-style: hidden;}
 .border_mix {border-style: dotted dashed solid double;}
-.button_link:link ,.button_visited:visited {background-color: #80ff80;color: black;padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;}
-.button_hover:hover, .button_action:active {background-color: #008080;color: white;}
+.button_link:link ,.button_visited:visited {background-color: #c0c0c0;color: white;padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;}
+.button_hover:hover, .button_action:active {background-color: #808080;color: white;}
 .color_red{color: red;}
 .color_blue{color:blue;}
 .color_black{color:black;}
@@ -73,6 +73,7 @@ a:active {color: #408080;} /* selected link */
 .text_overline{text-decoration: overline;}
 .text_line_through{text-decoration: line-through;}
 .width_full_size{width:100%}
+/* referenced by W3school */
 #wrapper > div{border: 1px solid red}
 #header > div{border: 1px solid blue}
 #header{
@@ -82,17 +83,99 @@ a:active {color: #408080;} /* selected link */
 	z-index:2;
 	color:black;
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown_content>p>a{
+	color:black;
+	
+}
+
+.dropdown:hover .dropdown_content {
+    display: block;
+  
+}
+
+.textarea_bbs {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size : 5px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.gallery {
+    margin: 10px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 290px;
+}
+
+.gallery:hover {
+    border: 1px solid #777;
+}
+
+.gallery img {
+    width:290px;
+    height: 280px;
+   	display:block;
+}
+
+.gallery_desc {
+    padding: 0px;
+    text-align: center;
+}
+
  /*나중에 jQuery 에 의해 제거될 대상  */
-.notice>dd{display:inline;float:left;}
-.policy>dd{display:inline;float:left;}
+.notice>dt>a{display:inline;float:left;}
+.policy>dd>a{display:inline;float:left;}
 
  
 .gnb {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #333;
+    background-color: #5fb1f5;
 }
 
 .gnb li {
@@ -102,7 +185,7 @@ a:active {color: #408080;} /* selected link */
 
 .gnb li a {
     display: block;
-    color: white;
+    color: #ffffff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -110,7 +193,8 @@ a:active {color: #408080;} /* selected link */
 
 /* Change the link color to #111 (black) on hover */
 .gnb li a:hover {
-    background-color: #111;
+    background-color: #57a6df;
+    color:#ffffff;
 }
 
 .lnb {
@@ -118,7 +202,8 @@ a:active {color: #408080;} /* selected link */
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: #f1f1f1;
+    background-color: #ffff00;
+    color:black;
     border: 1px solid #555;
 }
 
@@ -140,12 +225,12 @@ a:active {color: #408080;} /* selected link */
 
 .lnb li a.active {
     background-color: #4CAF50;
-    color: white;
+    color: #c0c0c0;
 }
 
 .lnb li a:hover:not(.active) {
     background-color: #555;
-    color: white;
+    color: #c0c0c0;
 }
 #admin_tab tr td{height:40px;}
 #admin_tab tr th{height:40px;}
