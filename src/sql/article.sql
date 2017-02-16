@@ -44,10 +44,11 @@ VALUES(art_seq.NEXTVAL, 'lim', '임창정', '병원', '17대1', '2017-02-15',14)
 --READ ALL
 SELECT * FROM Article;
 --READ SOME
-SELECT * FROM Article WHERE id = 'hong';
+SELECT * FROM Article WHERE id LIKE '%hong%';
 --READ ONE
 SELECT * FROM Article WHERE art_seq=1;
 --UPDATE
 UPDATE Article SET content = '자유게시판' WHERE id='hong';
 --DELETE
 DELETE FROM Article WHERE hong = 'hong';
+DELETE FROM Article WHERE id = 'hong' and art_seq='45'

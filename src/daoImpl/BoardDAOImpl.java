@@ -16,9 +16,10 @@ public class BoardDAOImpl implements BoardDAO {
     private BoardDAOImpl(){}
     @Override
     public int insert(ArticleBean param) throws Exception {
-	return DatabaseFactory.createDatabase(Vendor.ORACLE, Database.USERNAME, Database.PASSWORD).getConnection().createStatement().executeUpdate(String.format("INSERT INTO Article (art_seq, id, name, title, content, regdate, readCount)"+
-		"VALUES(art_seq.NEXTVAL, '%s', '%s', '%s', '%s', '%s','%d')",param.getId() ,  param.getName(),
-		param.getTitle(), param.getContent(), param.getRegdate(), param.getReadCount()));
+	return DatabaseFactory.createDatabase(Vendor.ORACLE, Database.USERNAME, Database.PASSWORD).getConnection().createStatement().
+		executeUpdate(String.format("INSERT INTO Article (art_seq, id, name, title, content, regdate)"+
+		"VALUES(art_seq.NEXTVAL, '%s', '%s', '%s', '%s', '%s')",param.getId() , param.getName(),
+		param.getTitle(), param.getContent(), param.getRegdate()));
     }
     @Override
     public ArticleBean selectBySeq(ArticleBean param) throws Exception {
@@ -42,9 +43,11 @@ public class BoardDAOImpl implements BoardDAO {
     public List<ArticleBean> selectByWord(String[] param) throws Exception {
 	List<ArticleBean> list = new ArrayList<ArticleBean>();
 	ArticleBean article = null;
-	String sql=String.format("SELECT art_seq, id, title, content, regdate, readCount FROM Article "
-		+ "WHERE" + param[0] +" = like %" + param[1]+"%");
+	String sql="SELECT art_seq, id, title, content, regdate, readCount FROM Article WHERE " 
+	+ param[0] + " LIKE '%"+param[1]+"%'";
+	
 	ResultSet rs = DatabaseFactory.createDatabase(Vendor.ORACLE, Database.USERNAME, Database.PASSWORD).getConnection().createStatement().executeQuery(sql);
+	
 	while(rs.next()){
 	    article = new ArticleBean();
 	    article.setSeq(rs.getString("art_seq"));
@@ -79,20 +82,21 @@ public class BoardDAOImpl implements BoardDAO {
     }
     @Override
     public int update(ArticleBean param) throws Exception {
-	return DatabaseFactory.createDatabase(Vendor.ORACLE, Database.USERNAME, Database.PASSWORD)
-		.getConnection().createStatement().executeUpdate( String.format("UPDATE Article SET title = '%s',"
-		+ "content = '%s' WHERE id='%s", param.getTitle(), param.getContent() ,param.getId()));
-	 
-	
+	return  DatabaseFactory.createDatabase(Vendor.ORACLE, Database.USERNAME, Database.PASSWORD)
+		.getConnection()
+		.createStatement()
+		.executeUpdate(String.format("UPDATE Article SET title = '%s',"
+			+ "content = '%s' WHERE id='%s'"
+			, param.getTitle()
+			, param.getContent() 
+			,param.getId()));
     }
-
     @Override
     public int delete(ArticleBean param) throws Exception {
 	return DatabaseFactory.createDatabase(Vendor.ORACLE, Database.USERNAME, Database.PASSWORD)
 		.getConnection()
 		.createStatement()
-		.executeUpdate(String.format("DELETE FROM Article WHERE hong = '%s' and art_seq='%s'",
-		param.getId(), param.getSeq()));
+		.executeUpdate(String.format("DELETE FROM Article WHERE id = '%s' and art_seq='%s'",
+			param.getId(), param.getSeq()));
     }
-
 }

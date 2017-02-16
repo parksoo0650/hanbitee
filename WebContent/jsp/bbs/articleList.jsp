@@ -40,9 +40,7 @@
 <div style="height:100px"></div>
 <div id="container" class="width_full_size" style="height:600px;">
 <!-- Content Here !! -->
-<%
-	MemberService service = new MemberServiceImpl();
-%>
+
 <table class="table_default margin_center" style="width:78%;height:200px;margin-top:15px;">
 	<tr class=" bg_color_gray color_white">
 		<th style="width:1%;">no</th>

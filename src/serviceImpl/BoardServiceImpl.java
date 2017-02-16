@@ -42,5 +42,10 @@ public class BoardServiceImpl implements BoardService{
     public int delete(ArticleBean param) throws Exception{
 	return dao.delete(param);
     }
+    @Override
+    public int count() throws Exception {
+	// TODO Auto-generated method stub
+	return 0;
+    }
 
 }
