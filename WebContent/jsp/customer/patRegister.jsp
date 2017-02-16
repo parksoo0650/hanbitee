@@ -14,7 +14,9 @@
 	MemberBean member = new MemberBean();
 	member.setId(request.getParameter("userid"));
 	member.setPassword(request.getParameter("password"));
-	member.setEmail(request.getParameter("email"));                                                              
+	member.setName(request.getParameter("name"));
+	member.setEmail(request.getParameter("email"));
+	member.setSsn(request.getParameter("birthyear"));
 %>
 </body>
 </html>

@@ -1,8 +1,8 @@
 package controller;
 import java.util.*;
 import domain.ArticleBean;
-import service.ArticleService;
-import serviceImpl.ArticleServiceImpl;
+import service.BoardService;
+import serviceImpl.BoardServiceImpl;
 //1.추가..주어진 BbsBean 값을 vec 에 추가하기
 //1,James,Hello,2016-2-6 17:30
 //2,Tom,Hi,2016-8-6 17:30
@@ -25,7 +25,7 @@ import serviceImpl.ArticleServiceImpl;
 public class BoardController {
     public static void main(String[] args) {
 	Vector<ArticleBean> list = new Vector<ArticleBean>(10,10);
-	ArticleService service = new ArticleServiceImpl();
+	BoardService service = BoardServiceImpl.getInstance();
 	// 0.리스트 스펙보기
 	//System.out.println("CAPA" + list.capacity());
 	//System.out.println("SIZE" + list.size());
@@ -66,7 +66,12 @@ public class BoardController {
 	a.setTitle("Hello");
 	a.setRegdate("2016-2-6 17:30");
 	list.add(a);
-	service.addArticle(a);
+	try {
+	    service.addArticle(a);
+	} catch (Exception e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+	}
 	// 2-1.검색(1)..맨 마지막의 추가한 글 검색, 
 	
 	

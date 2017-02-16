@@ -4,6 +4,12 @@
 <head>
 	<meta charset="UTF-8" />
 	<link rel="stylesheet" href="../../css/hanbit.css" />
+	<script>
+		function getValue(year, month, day){
+	    	var year = selectBox.SelectedIndex;
+		}
+	</script>
+	
 	<title>Document</title>
 </head>
 <body>
@@ -89,7 +95,8 @@
 						<option value="8">8</option>
 						<option value="9">9</option>
 						<option value="10">10</option>
-				</select>
+				</select><br /><br />
+				<input type="text" name="ssn1" size="8" value="" onchange=""/>-<input type="text" name="ssn2" size="8"/>
 				<p></td>
 			</tr>
 			<tr>

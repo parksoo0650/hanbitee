@@ -11,11 +11,11 @@ public class ArticleBean {
         this.seq = seq;
     }
 
-    public String getUid() {
+    public String getId() {
         return id;
     }
 
-    public void setUid(String uid) {
+    public void setId(String uid) {
         this.id = uid;
     }
 

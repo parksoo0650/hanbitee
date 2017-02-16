@@ -1,7 +1,6 @@
 package serviceImpl;
 import domain.MemberBean;
 import service.MemberService;
-
 import java.sql.Statement;
 
 import dao.MemberDAO;

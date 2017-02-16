@@ -2,68 +2,45 @@ package serviceImpl;
 
 import java.util.*;
 
+import dao.BoardDAO;
+import daoImpl.BoardDAOImpl;
 import domain.ArticleBean;
-import service.ArticleService;
+import service.BoardService;
 
-public class ArticleServiceImpl implements ArticleService{
-    private List<ArticleBean> list;
-    public ArticleServiceImpl() {
-	list=new ArrayList<ArticleBean>();
+public class BoardServiceImpl implements BoardService{
+    static BoardServiceImpl instance = new BoardServiceImpl();
+    public static BoardServiceImpl getInstance(){
+	return instance;
+    }
+    private BoardDAO dao;
+    private BoardServiceImpl() {
+	dao = BoardDAOImpl.getInstance();
     }
     @Override
-    public void addArticle(ArticleBean param) {
-	list.add(param);
+    public int addArticle(ArticleBean param) throws Exception {
+	return dao.insert(param);
 	
     }
     @Override
-    public ArticleBean findOne(ArticleBean param) {
-	ArticleBean article = new ArticleBean();
-	for(ArticleBean s : list){
-	    if(param.getSeq().equals(s.getSeq())){
-		article = s;
-		break;
-	    }
-	}
-	return article;
+    public ArticleBean findOne(ArticleBean param) throws Exception {
+	return dao.selectBySeq(param);
     }
 
     @Override
-    public List<ArticleBean> findSome(ArticleBean param) {
-	List<ArticleBean> list = new ArrayList<ArticleBean>();
-	for(ArticleBean s : list){
-	    if(param.getSeq().equals(s.getSeq())){
-		list.add(s);
-	    }
-	}
-	return list;
+    public List<ArticleBean> findSome(String[] param) throws Exception {
+	return dao.selectByWord(param);
     }
     @Override
-    public List<ArticleBean> list() {
-	return list;
+    public List<ArticleBean> list() throws Exception {
+	return dao.selectAll();
     }
-
     @Override
-    public void update(ArticleBean param) {
-	for(ArticleBean s : list){
-	    if(param.getSeq().equals(s.getSeq())){
-		s.setTitle((param.getTitle().equals(""))?s.getTitle():param.getTitle());
-		s.setContent((param.getContent().equals(""))?s.getContent():param.getContent());
-		break;
-	    }
-	}
-	
+    public int update(ArticleBean param) throws Exception {
+	return dao.update(param);
     }
-
     @Override
-    public void delete(ArticleBean param) {
-	Iterator<ArticleBean> it = list.iterator();
-	while(it.hasNext()){
-	    if(it.next().equals(param.getSeq())){
-		it.remove();
-		break;
-	    }
-	}
-	
+    public int delete(ArticleBean param) throws Exception{
+	return dao.delete(param);
     }
 
 }
