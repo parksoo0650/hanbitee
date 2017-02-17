@@ -1,9 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/hanbit.css" /> 
+<link rel="stylesheet" type="text/css" href="<%=application.getContextPath()%>/css/hanbit.css" /> 
 
 </head>
 <body>
@@ -14,8 +15,8 @@
 
 </div>
 	<ul class="gnb width_full_size text_center" style="height:40%">
-		<li><a href="jsp/customer/patRegsterForm.jsp" >회원가입</a></li>
-		<li><a href="jsp/customer/patLoginForm.jsp">로그인</a></li>
+		<li><a href="<%=application.getContextPath()%>/Register.do" >회원가입</a></li>
+		<li><a href="<%=application.getContextPath()%>/login.do">로그인</a></li>
 		<li><a href="html/bbs/bbs_list.html">자유게시판</a></li>
 		<li><div class="dropdown">
 		<a href="html/admin/check_admin.html">관리자모드</a>

@@ -4,9 +4,11 @@
 <head>
 	<meta charset="UTF-8" />
 	<link rel="stylesheet" href="../../css/hanbit.css" />
-	<script>
-		function getValue(year, month, day){
-	    	var year = selectBox.SelectedIndex;
+	<script lang="javascript">
+		function setYear(){
+	    	var year = document.getElementByName("birthyear");
+	    	var ssn = document.getElementByName("ssn1");
+	    	ssn.value=year.options[year.selectedIndex].value;
 		}
 	</script>
 	
@@ -66,7 +68,7 @@
 				<p></td>
 			</tr>
 			<tr>
-				<td><select name="birthyear">
+				<td><select name="birthyear" onchange="setYear();">
 						<option value="생년">생년</option>
 						<option value="1992">1992</option>
 				</select> <select name="birthmonth">

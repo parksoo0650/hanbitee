@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<link rel="stylesheet" href="../../css/hanbit.css" />
+	<link rel="stylesheet" href="<%=application.getContextPath()%>/css/hanbit.css" />
 	<title>Document</title>
 </head>
 <body>
