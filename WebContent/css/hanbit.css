@@ -172,7 +172,7 @@ a:active {color: #408080;} /* selected link */
 
  
 .gnb {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
     background-color: #5fb1f5;
@@ -234,3 +234,30 @@ a:active {color: #408080;} /* selected link */
 }
 #admin_tab tr td{height:40px;}
 #admin_tab tr th{height:40px;}
+
+.paging {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.paging li {
+    float: left;
+    
+}
+
+.paging l ia {
+    display: inline;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.paging li a:hover {
+    background-color: #white;
+    color:#ffffff;
+}
+

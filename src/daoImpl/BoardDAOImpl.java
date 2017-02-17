@@ -99,4 +99,15 @@ public class BoardDAOImpl implements BoardDAO {
 		.executeUpdate(String.format("DELETE FROM Article WHERE id = '%s' and art_seq='%s'",
 			param.getId(), param.getSeq()));
     }
+    @Override
+    public int count() throws Exception {
+	int count=0;
+	String sql = "SELECT COUNT(*) COUNT FROM Article";
+	Statement stmt = DatabaseFactory.createDatabase(Vendor.ORACLE, Database.USERNAME, Database.PASSWORD).getConnection().createStatement();
+	ResultSet rs = stmt.executeQuery(sql);
+	if(rs.next()){
+	    count=Integer.parseInt(rs.getString("count"));
+	}
+	return count;
+    }
 }

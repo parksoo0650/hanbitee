@@ -32,37 +32,37 @@ public class BoardController {
 	// 1.추가..주어진 BbsBean 값을 vec 에 추가하기
 	ArticleBean a = new ArticleBean();
 	a.setSeq("1");
-	a.setUid("James");
+	a.setId("James");
 	a.setTitle("Hello");
 	a.setRegdate("2016-2-6 17:30");
 	list.add(a);
 	a = new ArticleBean();
 	a.setSeq("2");
-	a.setUid("Tom");
+	a.setId("Tom");
 	a.setTitle("Hi");
 	a.setRegdate("2016-8-6 17:30");
 	list.add(a);
 	a = new ArticleBean();
 	a.setSeq("3");
-	a.setUid("Alex");
+	a.setId("Alex");
 	a.setTitle("Good Morning");
 	a.setRegdate("2016-12-25 17:30");
 	list.add(a);
 	a = new ArticleBean();
 	a.setSeq("4");
-	a.setUid("Betty");
+	a.setId("Betty");
 	a.setTitle("I'm happy");
 	a.setRegdate("2016-12-25 17:30");
 	list.add(a);
 	a = new ArticleBean();
 	a.setSeq("5");
-	a.setUid("John");
+	a.setId("John");
 	a.setTitle("Thank you");
 	a.setRegdate("2017-2-6 17:30");
 	list.add(a);
 	a = new ArticleBean();
 	a.setSeq("6");
-	a.setUid("James");
+	a.setId("James");
 	a.setTitle("Hello");
 	a.setRegdate("2016-2-6 17:30");
 	list.add(a);
@@ -86,7 +86,7 @@ public class BoardController {
 	System.out.println(set.toString());
 	// 2-3.검색(some)...James 가 쓴 글 검색
 	for(int i=0; i<list.size(); i++){
-	    if("James".equals(list.get(i).getUid())){
+	    if("James".equals(list.get(i).getId())){
 		set.add(list.get(i));
 	    }
 	}
