@@ -16,10 +16,10 @@ public class BoardDAOImpl implements BoardDAO {
     private BoardDAOImpl(){}
     @Override
     public int insert(ArticleBean param) throws Exception {
-	return DatabaseFactory.createDatabase(Vendor.ORACLE, Database.USERNAME, Database.PASSWORD).getConnection().createStatement().
-		executeUpdate(String.format("INSERT INTO Article (art_seq, id, name, title, content, regdate)"+
-		"VALUES(art_seq.NEXTVAL, '%s', '%s', '%s', '%s', '%s')",param.getId() , param.getName(),
-		param.getTitle(), param.getContent(), param.getRegdate()));
+	return DatabaseFactory.createDatabase(Vendor.ORACLE, Database.USERNAME, Database.PASSWORD)
+		.getConnection()
+		.createStatement().
+		executeUpdate(String.format("%s",""));
     }
     @Override
     public ArticleBean selectBySeq(ArticleBean param) throws Exception {

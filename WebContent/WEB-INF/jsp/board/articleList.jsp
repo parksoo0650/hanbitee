@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="serviceImpl.MemberServiceImpl" %>
-<%@ page import="service.MemberService" %>
+<%@ page import="serviceImpl.BoardServiceImpl" %>
+<%@ page import="service.BoardService" %>
 <%@ page import="domain.ArticleBean" %>
 <!doctype html>
 <html lang="en">

@@ -4,22 +4,23 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import dao.MemberDAO;
+import dao.PatientDAO;
 import daoImpl.MemberDAOImpl;
-import domain.MemberBean;
+import domain.ArticleBean;
+import domain.PatientBean;
 import enums.Butt;
-import service.MemberService;
-import serviceImpl.MemberServiceImpl;
+import service.PatientService;
+import serviceImpl.PatientServiceImpl;
 public class DAOTest {
     public static void main(String[] args) {
-	MemberDAO dao = new MemberDAOImpl();
-	MemberBean member  = new MemberBean();
-	MemberService service = MemberServiceImpl.getInstance();
+	PatientDAO dao = new MemberDAOImpl();
+	PatientBean member  = new PatientBean();
+	PatientService service = PatientServiceImpl.getInstance();
 	
-		member = new MemberBean();
+		member = new PatientBean();
 		String[] strArr = JOptionPane.showInputDialog("아이디,비밀번호").split(",");
-		member.setId(strArr[0]);
-		member.setPassword(strArr[1]);
+		member.setPatID(strArr[0]);
+		member.setPatPass(strArr[1]);
 		boolean check=false;
 		
 		String result="";
@@ -52,16 +53,15 @@ public class DAOTest {
 				    // TODO Auto-generated catch block
 				    e.printStackTrace();
 				}
-				System.out.printf("회원이름 : %s",member.getName());
+				System.out.printf("회원이름 : %s",member.getPatName());
 				break;
 			    case LIST:
 				break;
 			    case RANK:
-				member = new MemberBean();
+				member = new PatientBean();
 				String temp2=JOptionPane.showInputDialog("수정", member.toString());
 				String[] tempArr = temp2.split(",");
-				member.setId(tempArr[0]);
-				member.setRank(tempArr[1]);
+				member.setPatID(tempArr[0]);
 				break;
 			    case DELETE:
 				JOptionPane.showInputDialog("삭제할 아이디를 입력하세요");

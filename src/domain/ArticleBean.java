@@ -1,64 +1,18 @@
 package domain;
 
-public class ArticleBean {
-    private String seq,id,name,title,content,regdate,readCount;
+import java.io.Serializable;
 
-    public String getSeq() {
-        return seq;
-    }
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-    public void setSeq(String seq) {
-        this.seq = seq;
-    }
+@Data
+public class ArticleBean implements Serializable{
+    private static final long serialVersionUID = 1L;
+    @Setter @Getter
+    private String seq,id,title,content,regdate,readCount;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String uid) {
-        this.id = uid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getRegdate() {
-        return regdate;
-    }
-
-    public void setRegdate(String regdate) {
-        this.regdate = regdate;
-    }
-
-    public String getReadCount() {
-        return readCount;
-    }
-
-    public void setReadCount(String readCount) {
-        this.readCount = readCount;
-    }
-    
+   
     @Override
     public String toString() {
         // TODO Auto-generated method stub

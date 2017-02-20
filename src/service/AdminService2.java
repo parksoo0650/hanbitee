@@ -1,6 +1,6 @@
 package service;
 
-import domain.MemberBean;
+import domain.AdminBean;
 
 public interface AdminService2 {
     //CRUD,bussines Logic
@@ -19,15 +19,15 @@ public interface AdminService2 {
      */
     
     //create
-    public void regist(MemberBean member);
+    public void regist(AdminBean member);
     //read
-    public MemberBean findById(String id);
-    public MemberBean[] findByName(String name);//똑같은 이름이 있을 때
+    public AdminBean findById(String id);
+    public AdminBean[] findByName(String name);//똑같은 이름이 있을 때
     public int countByName(String name);
-    public MemberBean[] list();
+    public AdminBean[] list();
     public int count();
     //update
-    public void changeRank(MemberBean member);
+    public void changeRank(AdminBean member);
     //delete
     public void remove(String id); //비밀번호 노출,공개키
     //util

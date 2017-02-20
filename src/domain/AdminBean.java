@@ -1,18 +1,11 @@
 package domain;
 
-public class AdminBean extends MemberBean{
-    private String permission;
-    public void setPermission(String permission){
-	this.permission=permission;
-    }
-    public String sgtPermission(){
-  	return permission;
-    }
+import lombok.*;
 
-    public String toString() {
-	// TODO Auto-generated method stub
-	return String.format("%s(%s)[ %s | %s | **** | %s | %s | %s ]",
-		name,ssn,password,profileImg,phone,email);
-    }
+@Data
+public class AdminBean{
+    @Setter @Getter
+    private String admID, admPass, admName, admGen ,admPhone, admEmail,permission;
+
   
 }

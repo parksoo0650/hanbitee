@@ -1,7 +1,7 @@
 package service;
 
 import java.util.*;
-import domain.MemberBean;
+import domain.AdminBean;
 
 public interface AdminService {
     //CRUD,bussines Logic
@@ -19,16 +19,16 @@ public interface AdminService {
      * DELETE : DELETE
      */
     //create
-    public void regist(MemberBean member);
+    public void regist(AdminBean member);
     //read
-    public MemberBean findById(String id);
-    public List<MemberBean> findByName(String name);//똑같은 이름이 있을 때
-    public Map<String,MemberBean> mapfindByName(String name);
-    public List<MemberBean> memberlist(); //찾은 결과는 Map형식으로 담지 않음
+    public AdminBean findById(String id);
+    public List<AdminBean> findByName(String name);//똑같은 이름이 있을 때
+    public Map<String,AdminBean> mapfindByName(String name);
+    public List<AdminBean> adminlist(); //찾은 결과는 Map형식으로 담지 않음
     public List<String> keylist(); 
     public int count();
     //update
-    public void update(MemberBean member);
+    public void update(AdminBean member);
     //delete
     public void remove(String id); //비밀번호 노출,공개키
     //util

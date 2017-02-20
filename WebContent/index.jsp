@@ -11,15 +11,15 @@
 <div id="wrapper" class="width_full_size" style="height:100%;">
 <div id="header" class="width_full_size position_fixed" style="height:100px">
 <div class="logo_box width_full_size" style="height:60%;">
-<img src="images/common/index_logo.png" class="image_center" />
+<img src="<%=application.getContextPath()%>/images/common/index_logo.png" class="image_center" />
 
 </div>
 	<ul class="gnb width_full_size text_center" style="height:40%">
-		<li><a href="<%=application.getContextPath()%>/Register.do" >회원가입</a></li>
-		<li><a href="<%=application.getContextPath()%>/login.do">로그인</a></li>
+		<li><a href="<%=application.getContextPath()%>/patient/registerForm.do" >회원가입</a></li>
+		<li><a href="<%=application.getContextPath()%>/patient/loginForm.do">로그인</a></li>
 		<li><a href="html/bbs/bbs_list.html">자유게시판</a></li>
 		<li><div class="dropdown">
-		<a href="html/admin/check_admin.html">관리자모드</a>
+		<a href="<%=application.getContextPath()%>/admin/loginForm.do">관리자모드</a>
 		<div class="dropdown_content">		
 			<p><a href="html/staff/doctors.html" style="color:black;">의사</a></p>
 	 		<p><a href="" style="color:black;">간호사</a></p>

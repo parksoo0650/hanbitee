@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@  page import="service.MemberService" %>
-<%@  page import="serviceImpl.MemberServiceImpl" %>
+<%@  page import="service.PatientService" %>
+<%@  page import="serviceImpl.PatientServiceImpl" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,8 +15,8 @@
 <a href=""><img src="<%=application.getContextPath()%>/images/common/index_logo.png" class="image_center" /></a>
 </div>
 	<ul  class="gnb width_full_size text_center" style="height:40%">
-		<li><a href="patRegisterForm.jsp" >회원가입</a></li>
-		<li><a href="patLoginForm.jsp">로그인</a></li>
+		<li><a href="<%=application.getContextPath()%>patient/registerForm.do" >회원가입</a></li>
+		<li><a href="<%=application.getContextPath()%>/patient/loginForm.jsp">로그인</a></li>
 		<li><a href="../bbs/bbs_list.html">자유게시판</a></li>
 		<li><div class="dropdown">
 		<a href="../admin/admin.html">관리자모드</a>
@@ -33,7 +33,7 @@
 </div>
 <div style="height:100px"></div>
 <div id="container" class="width_full_size" style="height:600px;">
-<form action="patLogin.jsp" style="width:20%;margin-top:20px" class="margin_center">
+<form action="login.jsp" style="width:20%;margin-top:20px" class="margin_center">
 <table class="border_solid">
 	<tr>
 		<td>

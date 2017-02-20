@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<link rel="stylesheet" href="../../css/hanbit.css" />
+	<link rel="stylesheet" href="<%=application.getContextPath()%>/css/hanbit.css" />
 	<script lang="javascript">
 		function setYear(){
 	    	var year = document.getElementByName("birthyear");
