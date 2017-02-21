@@ -22,7 +22,7 @@ public class PatientController extends HttpServlet {
 	    Separator.init(request, response);
 	    switch (Separator.command.getAction()) {
 	    case "move":
-		DispatcherServlet.send(request, response, Separator.command);
+		DispatcherServlet.send(request, response);
 		break;
 	    default:
 		break;

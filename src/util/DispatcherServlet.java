@@ -8,8 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import domain.Command;
 
 public class DispatcherServlet {
-    public static void send(HttpServletRequest request, HttpServletResponse response,
-	    Command command) throws ServletException, IOException{
+    public static void send(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	request.getRequestDispatcher(Separator.command.getView()).forward(request, response);
     }
 }
