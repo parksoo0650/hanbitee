@@ -18,7 +18,7 @@
 	<div id="wrapper" class="width_full_size" style="height:100%;">
 <div id="header" class="width_full_size position_fixed" style="height:100px">
 <div class="logo_box width_full_size" style="height:60%;">
-<img src="../../images/common/index_logo.png" class="image_center" />
+<img src="<%=application.getContextPath()%>/images/common/index_logo.png" class="image_center" />
 </div>
 	<ul class="gnb width_full_size text_center" style="height:40%;">
 		<li><a href="patRegisterForm.jsp" >회원가입</a></li>

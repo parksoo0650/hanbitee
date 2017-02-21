@@ -15,8 +15,8 @@
 <a href=""><img src="<%=application.getContextPath()%>/images/common/index_logo.png" class="image_center" /></a>
 </div>
 	<ul  class="gnb width_full_size text_center" style="height:40%">
-		<li><a href="<%=application.getContextPath()%>patient/registerForm.do" >회원가입</a></li>
-		<li><a href="<%=application.getContextPath()%>/patient/loginForm.jsp">로그인</a></li>
+		<li><a href="<%=application.getContextPath()%>patient.do/action=move&page=registerForm" >회원가입</a></li>
+		<li><a href="<%=application.getContextPath()%>/patient.do/action=move&page=loginForm">로그인</a></li>
 		<li><a href="../bbs/bbs_list.html">자유게시판</a></li>
 		<li><div class="dropdown">
 		<a href="../admin/admin.html">관리자모드</a>

@@ -15,11 +15,11 @@
 
 </div>
 	<ul class="gnb width_full_size text_center" style="height:40%">
-		<li><a href="<%=application.getContextPath()%>/patient/registerForm.do" >회원가입</a></li>
-		<li><a href="<%=application.getContextPath()%>/patient/loginForm.do">로그인</a></li>
-		<li><a href="html/bbs/bbs_list.html">자유게시판</a></li>
+		<li><a href="<%=application.getContextPath()%>/patient.do?action=move&page=registerForm" >회원가입</a></li>
+		<li><a href="<%=application.getContextPath()%>/patient.do?action=move&page=loginForm">로그인</a></li>
+		<li><a href="<%=application.getContextPath()%>/board.do?action=move&page=main">자유게시판</a></li>
 		<li><div class="dropdown">
-		<a href="<%=application.getContextPath()%>/admin/loginForm.do">관리자모드</a>
+		<a href="<%=application.getContextPath()%>/admin.do?action=move&page=loginForm">관리자모드</a>
 		<div class="dropdown_content">		
 			<p><a href="html/staff/doctors.html" style="color:black;">의사</a></p>
 	 		<p><a href="" style="color:black;">간호사</a></p>
