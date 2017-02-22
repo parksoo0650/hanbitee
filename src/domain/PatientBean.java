@@ -8,8 +8,7 @@ import lombok.Setter;
 
 @Data public class PatientBean{
     @Setter @Getter
-    private String patID, docID, nurID,patPass, majorTreat, patName, patGen, parJumin,patPhone, patEmail, patArr,patJob;
-    
- 
+    private String patID, docID, nurID,patPass, patName, patGen, parJumin,patPhone, patEmail, patAddr,patJob;
+
     
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import dao.PatientDAO;
-import daoImpl.MemberDAOImpl;
+import daoImpl.PatientDAOImpl;
 import domain.ArticleBean;
 import domain.PatientBean;
 import enums.Butt;
@@ -13,7 +13,7 @@ import service.PatientService;
 import serviceImpl.PatientServiceImpl;
 public class DAOTest {
     public static void main(String[] args) {
-	PatientDAO dao = new MemberDAOImpl();
+	PatientDAO dao = new PatientDAOImpl();
 	PatientBean member  = new PatientBean();
 	PatientService service = PatientServiceImpl.getInstance();
 	
@@ -25,7 +25,7 @@ public class DAOTest {
 		
 		String result="";
 		try {
-		    check = service.login(member);
+		    member = service.login(member);
 		    if(check){
 			result="로그인 되었습니다.";
 			while(true){
@@ -48,7 +48,7 @@ public class DAOTest {
 				break;
 			    case FIND_BY_ID:
 				try {
-				    member = MemberDAOImpl.getInstance().selectById("kim");
+				    member = PatientDAOImpl.getInstance().selectById("kim");
 				} catch (Exception e) {
 				    // TODO Auto-generated catch block
 				    e.printStackTrace();

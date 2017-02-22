@@ -4,7 +4,7 @@ import service.PatientService;
 import java.sql.Statement;
 
 import dao.PatientDAO;
-import daoImpl.MemberDAOImpl;
+import daoImpl.PatientDAOImpl;
 public class PatientServiceImpl implements PatientService{
     private PatientDAO dao;
     private static PatientServiceImpl instance = new PatientServiceImpl();
@@ -13,7 +13,7 @@ public class PatientServiceImpl implements PatientService{
         return instance;
     }
     private PatientServiceImpl() {
-	dao = MemberDAOImpl.getInstance();
+	dao = PatientDAOImpl.getInstance();
 	session = new PatientBean();
     }
     @Override
@@ -22,14 +22,14 @@ public class PatientServiceImpl implements PatientService{
 	//patientDAOImpl.getInstance().selectById(id);
     }
     @Override
-    public boolean login(PatientBean patient) throws Exception{
-	boolean flag = false;
-	PatientBean temp = this.findById(patient.getDocID());
+    public PatientBean login(PatientBean patient) throws Exception{
+	/*PatientBean temp = this.findById(patient.getDocID());
 	if(patient.getPatPass().equals(temp.getPatPass())){
 	    flag=true;
 	    session=temp;
-	}
-	return flag;
+	}*/
+	
+	return this.findById(patient.getPatID());
 	//patientDAOImpl.getInstance().login(patient);
     }
 
@@ -51,7 +51,6 @@ public class PatientServiceImpl implements PatientService{
     }
     @Override
     public boolean logout(PatientBean patient) throws Exception {
-	session=null;
 	return true;
     }
 }

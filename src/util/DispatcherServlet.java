@@ -9,6 +9,7 @@ import domain.Command;
 
 public class DispatcherServlet {
     public static void send(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+	System.out.println("DispatcherServlet:"+Separator.command.getView());
 	request.getRequestDispatcher(Separator.command.getView()).forward(request, response);
     }
 }
