@@ -77,10 +77,10 @@ a:active {color: #408080;} /* selected link */
 #wrapper > div{border: 1px solid red}
 #header > div{border: 1px solid blue}
 #header{
-	position:fixed;
+	/* position:fixed; */
 	background-color:white;
 	height:68px;
-	z-index:2;
+	/* z-index:2; */
 	color:black;
 }
 

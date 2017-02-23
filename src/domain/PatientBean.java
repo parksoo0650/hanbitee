@@ -6,9 +6,10 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Data public class PatientBean{
+@Data 
+public class PatientBean{
     @Setter @Getter
-    private String patID, docID, nurID,patPass, patName, patGen, parJumin,patPhone, patEmail, patAddr,patJob;
+    private String patID, docID, nurID,patPass, patName, patGen, patJumin,patPhone, patEmail, patAddr,patJob;
 
     
 }

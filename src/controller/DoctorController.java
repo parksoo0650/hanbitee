@@ -7,32 +7,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class Doctor
- */
-@WebServlet("/Doctor")
+import util.DispatcherServlet;
+import util.Separator;
+@WebServlet("/doctor.do")
 public class DoctorController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DoctorController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	    System.out.println("=======닥터 서블릿 진입 성공=======");
+	    Separator.init(request, response);
+	switch(Separator.command.getAction()){
+	case "move" :
+	    System.out.println("이동할 페이지===="+Separator.command.getView());
+	    DispatcherServlet.send(request, response);
+	    break;
+	default:break;
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
+	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="${css}/hanbit.css" />
+<div>
 	<ul class="gnb width_full_size text_center" style="height:40%">
 		<li><a href="${context}/patient.do?action=move&page=registerForm" >고객:회원가입</a></li>
 		<li><a href="${context}/patient.do?action=move&page=loginForm">고객:로그인</a></li>
@@ -11,3 +12,4 @@
 			</div>
 		</li>
 	</ul>
+</div>

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="${css}/hanbit.css" />
-<div id="container" class="width_full_size margin_center" style="height:600px; margin_top:40%">
-<form action="${context}/patient.do" method="get" style="width:50%;height: 50%" class="margin_center">
-<table class="table_default" style="width:100%;">
+<div></div>
+<div id="container" class="width_full_size margin_center" style="width:100%;height: 600%;">
+<form action="${context}/patient.do" method="get" class="margin_center" style="width:100%;height: 600%;">
+<table class="table_default margin_center" style="width:50%;margin-top:90px;">
 	<tr>
 		<th>진료</th>
 		<th>진료일</th>
@@ -29,4 +29,3 @@
 <input type="hidden" name="page" value="main"/>
 </form>
 </div>
-

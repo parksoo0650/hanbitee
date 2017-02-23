@@ -42,14 +42,13 @@ public class PatientDAOImpl implements PatientDAO {
 		 .executeQuery(sql);
 	 	System.out.println("쿼리="+sql);
 		if(set.next()){
-		    System.out.println("인덱스"+set.getString(1));
 		   member.setPatID(set.getString("pat_id"));
 		   member.setDocID(set.getString("doc_id"));
 		   member.setNurID(set.getString("nur_id"));
 		   member.setPatPass(set.getString("pat_pass"));
 		   member.setPatName(set.getString("pat_name"));
 		   member.setPatGen(set.getString("pat_gen"));
-		   member.setParJumin(set.getString("pat_jumin"));
+		   member.setPatJumin(set.getString("pat_jumin"));
 		   member.setPatPhone(set.getString("pat_phone"));
 		   member.setPatEmail(set.getString("pat_email"));
 		   member.setPatAddr(set.getString("pat_addr"));

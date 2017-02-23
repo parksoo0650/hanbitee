@@ -1,16 +1,17 @@
+<%@page import="com.sun.glass.ui.Application"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Detail</title>
-<link rel="stylesheet" href="../../css/hanbit.css" />
+<link rel="stylesheet" href="${css}/hanbit.css" />
 </head>
 <body>
 <div id="wrapper" class="width_full_size" style="height:100%;">
 <div id="header" class="width_full_size position_fixed" style="height:100px">
 <div class="logo_box width_full_size" style="height:60%;">
-<img src="../../images/common/index_logo.png" class="image_center" />
+<img src="${img}/common/index_logo.png" class="image_center" />
 </div>
 <div class="gnb width_full_size" style="height:40%">
 	<ul class="gnb">
@@ -36,7 +37,7 @@
 <table class="table_default margin_center" style="width:500px;height:200px;margin-top:15px;">
 	<tr>
 		<td rowspan="3">
-		<img src="../../images/common/default_image.jpg" width="150px" height="150px" class="image_center margin_center"/></td>
+		<img src="${img}/common/default_image.jpg" width="150px" height="150px" class="image_center margin_center"/></td>
 		<th>id</th>
 		<td>000604</td>
 	</tr>
@@ -67,27 +68,7 @@
 	</li>
 </ul>
 </div>
-<div id="footer" class="width_full_size" style="height:80px">
-
-<dl class="notice" style="margin-left:15px;">
-		<dt><a href="/NOTICE" class="h_notice">공지사항</a></dt>
-	</dl>
-	<dl class="policy">
-		<dt>네이버 정책 및 약관</dt><!-- class="blind" -->
-		<dd class="f"><a href="http://www.navercorp.com/" target="_blank" id="plc.intronhn">회사소개</a></dd>
-		<dd><a href="http://mktg.naver.com/" id="plc.adinfo">광고</a></dd>
-		<dd><a href="https://submit.naver.com/" id="plc.search">마이비즈니스</a></dd>
-		<dd><a href="https://www.navercorp.com/ko/company/proposalGuide.nhn" target="_blank" id="plc.contact">제휴제안</a></dd>
-		<dd><a href="rules/service.html" id="plc.service">이용약관</a></dd>
-		<dd><a href="rules/privacy.html" id="plc.privacy"><strong>개인정보처리방침</strong></a></dd>
-		<dd><a href="rules/youthpolicy.html" id="plc.youth">청소년보호정책</a></dd>
-		<dd><a href="rules/spamcheck.html" id="plc.policy">네이버 정책</a></dd>
-		<dd><a href="https://help.naver.com/" id="plc.helpcenter">네이버 고객센터</a></dd>
-	</dl>
-
-<address>&copy; <strong><a href="http://www.navercorp.com/" target="_blank">NAVER Corp.</a></strong></address>
-
-	</div>
+<jsp:include page="../common/footer.jsp" />
 </div>
 
 </body>
