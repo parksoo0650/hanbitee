@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%-- <jsp:include page="../common/top.jsp" /> --%>
+<jsp:include page="../common/top.jsp" />
 <jsp:include page="../common/header.jsp"/>
-<div id="container" class="width_full_size" style="height:600px;position: relative;top:50">
-<form action="${context}/patient.do" method="post" style="width:20%;" class="margin_center">
+<div id="container">
+<form  id="frm" action="${context}/patient.do"  class="">
 <table>
 	<tr>
 		<td>
@@ -17,13 +17,17 @@
 		<input type="password" name="password" placeholder="비밀번호"/>
 		</td>
 	</tr>
+	
 </table>
 <input type="hidden" name="action" value="login"/>
 <input type="hidden" name="page" value="main"/>
-<input type="submit" value="로그인" class="width_full_size"/>
+<input id="log" type="submit" value="로그인"/>
 </form>
 </div>
-<jsp:include page="../common/footer.jsp"/>
-
-</body>
-</html>
+<script>
+$((function(){
+	$('#container').addClass('width_full_size').css('height','600px')
+	.css('position','relative').css('top','+=50').css('width','20%');
+	$('#frm').addClass('margin_center').css('width','20%');
+});
+</script>

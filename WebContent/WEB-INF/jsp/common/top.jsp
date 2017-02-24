@@ -3,8 +3,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<link rel="stylesheet" href="${css}/hanbit.css" />
 	<title>Document</title>
+		<link rel="stylesheet" href="${css}/hanbit.css" />
+		<script src="${js}/jquery-3.1.1.js"></script>
 </head>
 <body>
 <div id="wrapper" class="width_full_size" style="height:100%;">

@@ -31,7 +31,7 @@ a:active {color: #408080;} /* selected link */
 .border_none {border-style: none;}
 .border_hidden {border-style: hidden;}
 .border_mix {border-style: dotted dashed solid double;}
-.button_link:link ,.button_visited:visited {background-color: #c0c0c0;color: white;padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;}
+.button_link:link ,.button_visited:visited {background-color: #3c9fea;color: white;padding: 14px 25px;text-align: center;text-decoration: none;display: inline-block;}
 .button_hover:hover, .button_action:active {background-color: #3eace1;color: white;}
 .color_red{color: red;}
 .color_blue{color:blue;}
