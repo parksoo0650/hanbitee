@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +15,7 @@ import jdk.nashorn.internal.ir.RuntimeNode.Request;
 import service.PatientService;
 import serviceImpl.PatientServiceImpl;
 import util.DispatcherServlet;
+import util.ParamMap;
 import util.Separator;
 
 /**
@@ -73,11 +76,65 @@ public class PatientController extends HttpServlet {
 		Separator.command.setPage("main");
 		DispatcherServlet.send(request, response);
 		break;
+	    case "register" : 
+		String uid=request.getParameter("id");
+		String name=request.getParameter("name");
+		String addr=request.getParameter("addr");
+		String email=request.getParameter("email");
+		String password=request.getParameter("password");
+		String gbirth=request.getParameter("birthyear");
+		String month=request.getParameter("birthmonth");
+		String day=request.getParameter("birthday");
+		String telecom=request.getParameter("telecom");
+		String phoneNo=request.getParameter("phoneNo");
+		String phoneNo1=request.getParameter("pnum1");
+		String phoneNo2=request.getParameter("pnum2");
+		String phoneNo3=request.getParameter("pnum3");
+		String gender=request.getParameter("gender");
+		String job=ParamMap.getValues(request, "job");
+		ArrayList<String> list=new ArrayList<>();
+		list.add(uid);
+		list.add(name);
+		list.add(email);
+		list.add(password);
+		list.add(gbirth);
+		list.add(month);
+		list.add(day);
+		list.add(telecom);
+		list.add(phoneNo1+"-"+phoneNo2+"-"+phoneNo3);
+		list.add(gender);
+		list.add(job);
+		System.out.println(list);
+		String patJumin="";
+		bean.setPatID(uid);
+		bean.setPatEmail(email);
+		bean.setPatPass(password);
+		bean.setPatJumin(patJumin);
+		bean.setPatPhone(phoneNo1+"-"+phoneNo2+"-"+phoneNo3);
+		bean.setPatJob(job);
+		bean.setPatGen(gender);
+		bean.setPatAddr(addr);
+		bean.setPatName(name);
+		try {
+		    if(service.join(bean)==1){
+			System.out.println("=========회원가입 성공==========");
+			DispatcherServlet.send(request, response);
+		    }else{
+			System.out.println("=========회원가입 실패==========");
+			Separator.command.setPage("registerForm");
+			Separator.command.setView();
+			DispatcherServlet.send(request, response);
+		    }
+		    
+		} catch (Exception e) {
+		    // TODO Auto-generated catch block
+		    e.printStackTrace();
+		}
+		break;
 	    default:
 		break;
 	    }
 	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

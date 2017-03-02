@@ -2,7 +2,7 @@
 <jsp:include page="../common/top.jsp" />
 <jsp:include page="../common/header.jsp"/>
 <div id="container">
-<form  id="frm" action="${context}/patient.do"  class="">
+<form id="loginForm">
 <table>
 	<tr>
 		<td>
@@ -25,9 +25,24 @@
 </form>
 </div>
 <script>
-$((function(){
-	$('#container').addClass('width_full_size').css('height','600px')
-	.css('position','relative').css('top','+=50').css('width','20%');
-	$('#frm').addClass('margin_center').css('width','20%');
+$(function(){
+	var loginForm=$('#loginForm');
+	var tab=loginForm.find('table');
+	$('#container').addClass('width_full_size').css('height','+=600')
+	.css('position','relative').css('top','+=50').css('width','+=20');
+	loginForm.addClass('margin_center').css('width','+=20');
+	$('#loginForm input[value=로그인]').click(function() {
+		loginForm.attr("action","${context}/patient.do");
+		loginForm.attr("method","post");
+		var idVal=tab.find('input[name=id]').val();
+		var pwVal=tab.find('input[name=password]').val();
+		if(idVal==''||pwVal==''){
+			alert('값을 먼저 입력해주세요');
+		}else{
+			alert('로그인 하기 위해 입력한 ID 값, PW값'+idVal+'PW='+pwVal);
+			loginForm.submit();
+		}
+	});
+
 });
 </script>

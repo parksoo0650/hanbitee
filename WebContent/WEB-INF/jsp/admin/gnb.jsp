@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-</div>
-	<ul  class="gnb width_full_size text_center" style="height:40%">
-		<li><a href="<%=application.getContextPath()%>/patient.do?action=move&page=registerForm" >회원가입</a></li>
-		<li><a href="<%=application.getContextPath()%>/patient.do?action=move&page=loginForm">로그인</a></li>
+
+	<ul id="admGnb" class="gnb width_full_size text_center" style="height:40%">
+		<li><a>회원가입</a></li>
+		<li><a>로그인</a></li>
 		<li><a href="../bbs/bbs_list.html">자유게시판</a></li>
 		<li><div class="dropdown">
 		<a href="../admin/admin.html">관리자모드</a>
@@ -16,4 +16,17 @@
 		</div>
 		</li>
 	</ul>	
-</div>
+
+<script>
+$(function() {
+	$('#admGnb').addClass('gnb').addClass('width_full_size').addClass('text_center');
+	$('#admGnb').click(function() {
+		alert('회원가입 클릭!');
+		location.href='${context}/patient.do?action=move&page=registerForm';
+	})
+	$('admGmnb').click(function() {
+		alert('로그인 클릭!');
+		location.href='${context}/patient.do?action=move&page=loginForm';
+	})
+})
+</script>

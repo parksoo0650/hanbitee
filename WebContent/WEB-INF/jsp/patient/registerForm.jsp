@@ -4,21 +4,43 @@
 
 <jsp:include page="../common/top.jsp"/>
 <jsp:include page="../common/header.jsp"/>
-<jsp:include page="../common/gnb.jsp"/>
 <div id="container" class="width_full_size" style="height:800px;">
-	<form action="patRegister.jsp" style="width:40%;margin-top:15px;" class="margin_center" >
+
+	<form id="regForm" action="patRegister.jsp" style="width:40%;margin-top:15px;" class="margin_center" >
 		<table class="table_default">
+			<tr>
+				<td>
+					<select name="doctor">
+						<option value="" selected>의사선택</option>
+						<option value="dhong">피부과: 홍길동</option>
+						<option value="dahn">내과: 안성기</option>
+						<option value="akim">외과: 김민종</option>
+						<option value="akim2">소아과: 김연아</option>
+					</select> 
+				</td>
+			</tr>
+				<tr>
+				<td>
+					<select name="nurse">
+						<option value="" selected>의사선택</option>
+						<option value="dhong">피부과: 홍길동</option>
+						<option value="dahn">내과: 안성기</option>
+						<option value="akim">외과: 김민종</option>
+						<option value="akim2">소아과: 김연아</option>
+					</select> 
+				</td>
+			</tr>
 			<tr>
 				<td class="color_blue">한글 또는 영문으로 입력해 주세요</td>
 			</tr>
 			<tr>
-				<td><input type="text" name="userid" value="아이디" size="20">
+				<td>ID<input type="text" name="id" value="아이디" size="20">
 				<input type="button" value="중복확인">
-				<p>이름을 입력하세요</td>
+				<p>아이디을 입력하세요</td>
 			</tr>
 			<tr>
-				<td><input type="text" name="password" value="이름" size="20">
-				<p>LPOINT아이디는 자주 사용하시는 이메일주소로 입력해주세요</td>
+				<td>ID<input type="text" name="name" value="이름" size="20">
+				<p>이름을 입력하세요</td>
 			</tr>
 			<tr>
 				<td><input type="email" name="email" value="E-mail" size="20">
@@ -35,8 +57,12 @@
 				<p></td>
 			</tr>
 			<tr>
-				<td><select name="birthyear" onchange="setYear();">
-						<option value="생년">생년</option>
+				<td><input type="text" name="addr" value="주소">
+				<p>주소를 입력하세요</td>
+			</tr>
+			<tr>
+				<td><select name="birthyear">
+						<option value="" selected>생년선택</option>
 						<option value="1992">1992</option>
 				</select> <select name="birthmonth">
 						<option value="월">월</option>
@@ -73,37 +99,51 @@
 						<option value="SKT">SKT</option>
 						<option value="KT">KT</option>
 						<option value="LGU+">LGU+</option>
-				</select> <select name="firstnum">
+				</select> <select name="pnum1">
 						<option value="010">010</option>
-				</select> -<input type="tel" name="pnum1" size="4"> -<input
-					type="tel" name="pnum2" size="4">
+						<option value="011">011</option>
+						<option value="017">017</option>
+				</select><input type="tel" name="pnum2" size="4">
+				<input type="tel" name="pnum3" size="4">
 				<p></td>
 			</tr>
-
-			<tr align="left">
-				<th>정보수신 동의<input type="checkbox" name="allcheck">전제선택
-				</th>
-			</tr>
 			<tr>
-				<td>LPOINT<input type="checkbox" name="mail" value="E-Mail">E-Mail
-					<input type="checkbox" name="sms" value="SMS">SMS
-					<p>
-						롯데시네마<input type="checkbox" name="mail" value="E-Mail">E-Mail
-						<input type="checkbox" name="sms" value="SMS">SMS
-					<p>*정보수신동의를 하시면,고객혜택 및 이벤트 등 다양한 정보를 받으실 수 있습니다.</td>
+			<td>
+			직업(두개 이상 선택 가능, 단 스탭은 병원관계자만 클릭하세요)
+			</td>
 			</tr>
+			
+<!-- job: 회사원 employee 개발자 developer 스탭 staff 요리사 cook 선생 teacher 학생 student -->
 			<tr>
-				<td>개인정보 유효기간 <input type="radio" name="del" value="탈퇴 시 파기">탈퇴
-					시 파기 <input type="radio" name="oneyear" value="1년">1년
-					<p>*개인정보 유효기간 경과 이후 개인정보를 분리 저장관리 또는 파기합니다.
-					<p></td>
+				<td>
+				<input type="checkbox" name="job" value="employee">회사원
+				<input type="checkbox" name="job" value="develpler">개발자
+				<input type="checkbox" name="job" value="staff">스탭
+				<input type="checkbox" name="job" value="cook">요리사
+				<input type="checkbox" name="job" value="teacher">선생
+				<input type="checkbox" name="job" value="student">학생
+			</td>
 			</tr>
 		</table>
 		<span class="color_blue">*선택항목에 동의하지 않으셔도 정상적인 서비스를 이용하실수 있습니다.</span>
+		<input type="hidden" name="action" value="register"/>
+		<input type="hidden" name="page" value="main"/>
 		<div>
-		<a href="#" class="button_link button_visited button_action button_hover" style="width:180px;">이전</a>
-		<a href="#" class="button_link button_visited button_action button_hover" style="width:180px;">다음</a>
+		<a href="#" id="" class="button_link button_visited button_action button_hover" style="width:180px;">이전</a>
+		<a href="#" id="regNext" class="button_link button_visited button_action button_hover" style="width:180px;">다음</a>
 		</div>
 	</form>
 </div>
 <jsp:include page="../common/footer.jsp"/>
+<script>
+$(function() {
+	var $regForm=$('#regForm');
+	var tab = $regForm.find('table');
+	$('#regNext').click(function() {
+		$regForm.attr("action","${context}/patient.do");
+		$regForm.attr("method","post");
+		alert('전송직전');
+		$regForm.submit();	
+	})
+});
+</script>

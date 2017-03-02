@@ -10,7 +10,7 @@ import factory.DatabaseFactory;
 
 public class PatientDAOImpl implements PatientDAO {
      //intance하나 만들고 더이상 만들지 않는다.
-    final String prop="pat_id,doc_id,nur_id,pat_pass,pat_name,pat_gen," 
+    final String prop="pat_id,pat_pass,pat_name,pat_gen," 
 	    +"pat_jumin,pat_phone,pat_email,pat_addr,pat_job";
   
  
@@ -22,7 +22,8 @@ public class PatientDAOImpl implements PatientDAO {
     }
     @Override
     public int insert(PatientBean member) throws Exception{
-	String sql = String.format("%s", "");
+	String sql = String.format("INSERT INTO Patient" +"("+prop+") VALUES"
+		+"(%s,%s)", "");
 	    return DatabaseFactory.createDatabase(
 		    Vendor.ORACLE,Database.USERNAME,Database.PASSWORD)
 		    .getConnection()
