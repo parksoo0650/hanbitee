@@ -24,13 +24,13 @@ public class BoardDAOImpl implements BoardDAO {
     @Override
     public ArticleBean selectBySeq(ArticleBean param) throws Exception {
 	ArticleBean article  = null;
-	String sql = String.format("SELECT art_seq, id, title, content, regdate, readCount FROM Article "
-	+" WHERE art_seq='%id'", param.getSeq());
+	String sql = String.format("SELECT art_seq, pat_id, title, content, regdate, readCount FROM Article"
+	+" WHERE art_seq='%s'", param.getSeq());
 	ResultSet rs = DatabaseFactory.createDatabase(Vendor.ORACLE, Database.USERNAME, Database.PASSWORD).getConnection().createStatement().executeQuery(sql);
 	while(rs.next()){
 	    article  = new ArticleBean();
 	    article.setSeq(rs.getString("art_seq"));
-	    article.setId(rs.getString("id"));
+	    article.setId(rs.getString("pat_id"));
 	    article.setTitle(rs.getString("title"));
 	    article.setContent(rs.getString("content"));
 	    article.setRegdate(rs.getString("regdate"));
@@ -63,17 +63,18 @@ public class BoardDAOImpl implements BoardDAO {
 
     @Override
     public List<ArticleBean> selectAll() throws Exception {
+	String sql = String.format("%s", "SELECT art_seq, pat_id, title, regdate, readCount FROM Article");
 	List<ArticleBean> list = new ArrayList<ArticleBean>();
 	ArticleBean article = null;
 	ResultSet rs =  DatabaseFactory.createDatabase(Vendor.ORACLE, Database.USERNAME, Database.PASSWORD).getConnection()
 	.createStatement()
-	.executeQuery("SELECT art_seq, id, title, content, regdate, readCount FROM Article");
+	.executeQuery(sql);
+	System.out.println("sql 쿼리"+sql);
 	while(rs.next()){
 	    article = new ArticleBean();
 	    article.setSeq(rs.getString("art_seq"));
-	    article.setId(rs.getString("id"));
+	    article.setId(rs.getString("pat_id"));
 	    article.setTitle(rs.getString("title"));
-	    article.setContent(rs.getString("content"));
 	    article.setRegdate(rs.getString("regdate"));
 	    article.setReadCount(rs.getString("readCount"));
 	    list.add(article);

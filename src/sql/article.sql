@@ -38,56 +38,56 @@ INSERT INTO Patient(pat_id, nur_id, doc_id, pat_pass, pat_name, pat_gen, pat_jum
 INSERT INTO Patient(pat_id, nur_id, doc_id, pat_pass, pat_name, pat_gen, pat_jumin, pat_addr, pat_phone, pat_email, pat_job) VALUES ('Doe',  'nkim3',  'dkim2',  '1', '송성묵', 'M', '987643', '서울', '010-222-5874', 'ssm@bb.com', '학생');
 
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'hong', '안녕', '안녕하세요? 홍길동 입니다.', '2017-02-15',1);
+VALUES(art_seq.NEXTVAL, 'pahn', '안녕', '안녕하세요? 홍길동 입니다.', '2017-02-15',1);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'kim',  'aaa', '한빛병원 후기입니다.', '2017-02-15',100);
+VALUES(art_seq.NEXTVAL, 'pkim',  'aaa', '한빛병원 후기입니다.', '2017-02-15',100);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'lee',  '명량', '23전23승', '2017-02-15',50);
+VALUES(art_seq.NEXTVAL, 'pkim',  '명량', '23전23승', '2017-02-15',50);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'suro',  '가야', '한빛 병원추천합니다.', '2017-02-15',20);
+VALUES(art_seq.NEXTVAL, 'plee',  '가야', '한빛 병원추천합니다.', '2017-02-15',20);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'song',  '운영자', '운영자입니다.', '2017-02-15',14);
+VALUES(art_seq.NEXTVAL, 'pyou',  '운영자', '운영자입니다.', '2017-02-15',14);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'son',  '최고!', '한빛병원 정형외과', '2017-02-15',1);
+VALUES(art_seq.NEXTVAL, 'pyou',  '최고!', '한빛병원 정형외과', '2017-02-15',1);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL,'hongd',  'bbb', '한빛병원 후기입니다.', '2017-02-15',100);
+VALUES(art_seq.NEXTVAL,'pyou',  'bbb', '한빛병원 후기입니다.', '2017-02-15',100);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'ahn',  '병원', '최고의병원', '2017-02-15',50);
+VALUES(art_seq.NEXTVAL, 'kim',  '병원', '최고의병원', '2017-02-15',50);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'ryu',  '공지입니다.', '내일부터 설 연휴간 병원 휴무입니다.', '2017-02-15',120);
+VALUES(art_seq.NEXTVAL, 'kim',  '공지입니다.', '내일부터 설 연휴간 병원 휴무입니다.', '2017-02-15',120);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'go', '병원추천', '병원 추천합니다.', '2017-02-15',14);
+VALUES(art_seq.NEXTVAL, 'kim', '병원추천', '병원 추천합니다.', '2017-02-15',14);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'lim', '병원', '17대1', '2017-02-15',14);
+VALUES(art_seq.NEXTVAL, 'kim', '병원', '17대1', '2017-02-15',14);
 
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'hong',  '그레이트월', '2017.02.16 대개봉', '2017-02-16',1);
+VALUES(art_seq.NEXTVAL, 'Doe',  '그레이트월', '2017.02.16 대개봉', '2017-02-16',1);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'kim',  '이상 영락', '이상 영락과 가치를 칼이다', '2017-02-16',100);
+VALUES(art_seq.NEXTVAL, 'Doe',  '이상 영락', '이상 영락과 가치를 칼이다', '2017-02-16',100);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'lee', '품으며 ', '풀이 두손을 되려니와,', '2017-02-16',50);
+VALUES(art_seq.NEXTVAL, 'Doe', '품으며 ', '풀이 두손을 되려니와,', '2017-02-16',50);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'suro',  '만물', '가슴에 힘차게 충분히 있으랴? .', '2017-02-16',20);
+VALUES(art_seq.NEXTVAL, 'Doe',  '만물', '가슴에 힘차게 충분히 있으랴? .', '2017-02-16',20);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'song',  '열매', '그들은 열매를 길지 기쁘다.', '2017-02-16',14);
+VALUES(art_seq.NEXTVAL, 'Doe',  '열매', '그들은 열매를 길지 기쁘다.', '2017-02-16',14);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'son',  '철환', '하였는가 끓는다', '2017-02-16',1);
+VALUES(art_seq.NEXTVAL, 'song',  '철환', '하였는가 끓는다', '2017-02-16',1);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL,'hongd',  '관현악', '그들에게 그러므로 구하지 설산에서 방지하는 사막이다', '2017-02-16',100);
+VALUES(art_seq.NEXTVAL,'song',  '관현악', '그들에게 그러므로 구하지 설산에서 방지하는 사막이다', '2017-02-16',100);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'ahn',  '광야', '따뜻한 우리 광야에서 못할 눈에 때문이다.', '2017-02-16',50);
+VALUES(art_seq.NEXTVAL, 'song',  '광야', '따뜻한 우리 광야에서 못할 눈에 때문이다.', '2017-02-16',50);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'ryu',  '열락.', '열락의 이 평화스러운 보배를 것이다. ', '2017-02-16',120);
+VALUES(art_seq.NEXTVAL, 'Ooh',  '열락.', '열락의 이 평화스러운 보배를 것이다. ', '2017-02-16',120);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'go',  '무한한 인생', '끝까지 무한한 그들의 인생을 그들은 것이다. ', '2017-02-16',14);
+VALUES(art_seq.NEXTVAL, 'Ooh',  '무한한 인생', '끝까지 무한한 그들의 인생을 그들은 것이다. ', '2017-02-16',14);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'lim', '임창정', '영락', '돋고, 우리 그들의 얼마나 영락과 목숨이 따뜻한 보라. ', '2017-02-16',14);
+VALUES(art_seq.NEXTVAL, 'Ooh','영락', '돋고, 우리 그들의 얼마나 영락과 목숨이 따뜻한 보라. ', '2017-02-16',14);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'lim',  '심장을 위하여', '위하여 굳세게 과실이 없으면 심장의 많이 위하여서, ', '2017-02-16',14);
+VALUES(art_seq.NEXTVAL, 'pchoi2',  '심장을 위하여', '위하여 굳세게 과실이 없으면 심장의 많이 위하여서, ', '2017-02-16',14);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'lim',  '청춘의봄바람', '청춘의 봄바람이다.', '2017-02-16',14);
+VALUES(art_seq.NEXTVAL, 'pchoi2',  '청춘의봄바람', '청춘의 봄바람이다.', '2017-02-16',14);
 INSERT INTO Article (art_seq, pat_id,  title, content, regdate, readCount)
-VALUES(art_seq.NEXTVAL, 'lim',  '역사를 희망', '희망의 낙원을 듣기만 광야에서 넣는 황금시대의 황금시대다. ', '2017-02-16',14);
+VALUES(art_seq.NEXTVAL, 'pchoi2',  '역사를 희망', '희망의 낙원을 듣기만 광야에서 넣는 황금시대의 황금시대다. ', '2017-02-16',14);
 --READ ALL
 SELECT * FROM Article;
 --READ SOME

@@ -1,0 +1,1 @@
+SELECT art_seq, pat_id, title, content, regdate, readCount FROM Article
