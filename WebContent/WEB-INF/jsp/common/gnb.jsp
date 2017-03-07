@@ -32,7 +32,7 @@ $(function() {
 	});
 	commonGnb.find('li:nth-child(5)').click(function(){
 		alert('게시판 클릭 했음!!!');
-		goPage('${context}/board.do','list','articleList');
+		goList('${context}/board.do','list','articleList','1');
 	});
 });
 </script>

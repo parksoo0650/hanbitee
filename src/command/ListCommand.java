@@ -6,14 +6,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import handler.CommandHandler;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import handler.Commandable;
 
-public class ListCommand extends Command implements CommandHandler{
-   
-    public ListCommand(String directory, String action, String page,String pageNo) {
+public class ListCommand extends Command implements Commandable{
+    public ListCommand(String directory, String action, String page, String pageNo) {
 	super.directory=directory;
 	super.action=action;
 	super.page=page;
@@ -22,9 +18,8 @@ public class ListCommand extends Command implements CommandHandler{
     }
 
     @Override
-    public String process() {
-	// TODO Auto-generated method stub
-	return null;
+    public void process(HttpServletRequest request, HttpServletResponse response)
+	    throws ServletException, IOException {
     }
   
   

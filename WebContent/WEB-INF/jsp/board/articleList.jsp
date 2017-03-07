@@ -5,7 +5,7 @@
 <table id="articleList">
 	<tr>
 		<td>
-			<th>총 게시글 수:${requestScope.count}</th>
+			총 게시글 수:${count} 건
 		</td>
 	</tr>
 	<tr>
@@ -25,20 +25,48 @@
 	</tr>
 </c:forEach>
 </table>
-<nav style="width:500px;margin: 0 auto;background: gray;">
-<ul class="gnb">
-<c:forEach var="page" items="${requestScope.block}">
-	<li style="text-align: center;width: 30px">
-	<a href="">${pageNo}</a>
+<nav id="pagination">
+<ul>
+<c:if test="${requestScope.prevBlock gt 0}">
+		<li>
+		<a href="${context}/board.do?action=list&page=articleList&pageNo=${requestScope.prevBlock}">◀PREVS</a>
+		</li>
+	</c:if>
+<c:forEach varStatus="i" begin="${requestScope.blockStart}" end="${requestScope.blockEnd}" step="1">
+	<li>
+	<c:choose>
+		<c:when test="${i.index eq pageNo}">
+			<li style="background-color: skyblue;"><a href="#">${i.index}</a></li>
+		</c:when>
+		<c:otherwise>
+		<li style="background-color: gray;">
+			<a href="${context}/board.do?action=list&page=articleList&pageNo=${i.index}">${i.index}</a>
+		</li>
+		</c:otherwise>
+	</c:choose>
 	</li>
-</c:forEach>
+	</c:forEach>
+	<c:if test="${requestScope.nextBlock le pageCount}">
+	<li style="background-color: gray;">
+		<a href="${context}/board.do?action=list&page=articleList&pageNo=${requestScope.nextBlock}">NEXT▶</a>
+	</li>
+	</c:if>
 </ul>
 </nav>
 <script>
 	$(function() {
 		var $articlelist=$('#articleList');
 		$articlelist.addClass('table_default').addClass('margin_center')
-		.css('width','78%').css('heigh','200px').css('margin-top','15px');
+		.css('width','78%').css('height','200px').css('margin-top','15px');
 		$articlelist.find('tr:nth-child(1)').addClass('bg_color_gray').addClass('color_white');
-	})
+		var $pagination=$('#pagination');
+		$pagination.css('width','500px').css('margin','0 auto').css('background-color', 'gray');
+		$pagination.find('ul:nth-child(1)').addClass('gnb');
+		$pagination.find('ul li:nth-child(1)').css('background-color','gray');
+		$pagination.find('ul li:nth-child(2)').css('background-color','gray');
+		$pagination.find('ul li:nth-child(3)').css('background-color','gray');
+		
+		
+		
+	});
 </script>

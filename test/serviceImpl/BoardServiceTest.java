@@ -35,12 +35,12 @@ public class BoardServiceTest {
 	assertTrue(list.get(0).getId().equals("hong"));
     }
 
-    @Test @Ignore
+   /* @Test @Ignore
     public void testList() throws Exception {
 	List<ArticleBean> list = new ArrayList<ArticleBean>();
 	list = service.list();
 	assertTrue(list.size() >= 0);
-    }
+    }*/
 
     @Test  @Ignore
     public void testUpdate() throws Exception {

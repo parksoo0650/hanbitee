@@ -100,3 +100,10 @@ UPDATE Article SET title = 'aaa',content = 'aaa' WHERE pat_id='hong'
 --DELETE
 DELETE FROM Article WHERE hong = 'hong';
 DELETE FROM Article WHERE pat_id = 'hong' and art_seq='45'
+
+SELECT t2.*
+	   FROM (SELECT ROWNUM seq,t.*
+       FROM (SELECT * FROM ARTICLE ORDER BY art_seq DESC) t) t2
+       WHERE t2.seq BETWEEN 1 AND 5
+       
+       SELECT t2.* FROM (SELECT ROWNUM seq,t.* FROM (SELECT * FROM ARTICLE ORDER BY art_seq DESC) t) t2 WHERE t2.seq BETWEEN 21 AND 25 

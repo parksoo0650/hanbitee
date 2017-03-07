@@ -30,8 +30,8 @@ public class BoardServiceImpl implements BoardService{
 	return dao.selectByWord(param);
     }
     @Override
-    public List<ArticleBean> list() throws Exception {
-	return dao.selectAll();
+    public List<ArticleBean> list(int[] pageArr){
+	return dao.selectAll(pageArr);
     }
     @Override
     public int update(ArticleBean param) throws Exception {
@@ -42,8 +42,16 @@ public class BoardServiceImpl implements BoardService{
 	return dao.delete(param);
     }
     @Override
-    public int count() throws Exception {
-	return dao.count();
+    public int count(){
+	int size=0;
+	try {
+	    size=dao.count();
+	   
+	} catch (Exception e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+	}
+	return size;
     }
 
 }
